@@ -189,5 +189,56 @@ public class LinkedList {
     }
 
 
+    //LEETCODE Exercises :---------------------------------------------------------------------------------------------
+
+    // Qustion 1 :-
+    // LL: Find Middle Node ( -**- Interview Question -**- )
+
+    /*
+
+    1 -> 2 -> 3 -> 4 -> 5-> null
+
+    output : 3
+
+    */
+
+    public Node findMiddleNode(){
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+
+    //Question 2 :-----------------------------------------------------------------------------------------------------
+    //LL: Has Loop ( -**- Interview Question -**- )
+
+    /*
+
+    1 -> 2 -> 3 -> 4
+              |    |
+              6 <- 5
+
+     Output : true
+
+     */
+
+    public boolean hasLoop(){
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(fast == slow) return true;
+        }
+        return false;
+    }
+
 
 }
