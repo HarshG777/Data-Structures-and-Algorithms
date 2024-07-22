@@ -329,7 +329,87 @@ public class LinkedList {
     }
 
 
+    //Question 5 :-----------------------------------------------------------------------------------------------------
+    //LL: Remove Duplicates ( -**- Interview Question -**-)
 
+    /*
+
+   Example:
+
+    Input:
+
+    LinkedList: 1 -> 2 -> 3 -> 1 -> 4 -> 2 -> 5
+
+    Output:
+
+    LinkedList: 1 -> 2 -> 3 -> 4 -> 5
+
+
+     */
+
+    public void removeDuplicates(){
+        Node current = head;
+
+        while (current != null){
+            Node before = current;
+            Node match = current.next;
+
+            while (match != null){
+
+                if(match.value == current.value){
+                    before.next = match.next;
+                    match.next = null;
+                    match = before.next;
+
+                }
+                else {
+                    match = match.next;
+                    before = before.next;
+                }
+            }
+
+            current = current.next;
+        }
+    }
+
+    //Question 6 :-----------------------------------------------------------------------------------------------------
+    //LL: Binary to Decimal ( -**- Interview Question -**-)
+
+    /*
+
+   Example Execution with Binary 101:
+
+    Start with num = 0.
+
+    Process 1 (from the head of the linked list): num = 0 * 2 + 1 = 1
+
+    Process 0: num = 1 * 2 + 0 = 2
+
+    Process 1: num = 2 * 2 + 1 = 5
+
+    Return num, which is 5.
+
+
+     */
+
+
+    public int binaryToDecimal(){
+
+        int num = 0;
+
+        if(head == null) return 0;
+
+        Node current = head;
+
+
+        while(current != null){
+            num = num*2 + current.value;
+
+            current = current.next;
+        }
+
+        return num;
+    }
 
 
 }
