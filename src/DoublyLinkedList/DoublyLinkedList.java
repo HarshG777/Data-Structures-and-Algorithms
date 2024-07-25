@@ -210,4 +210,44 @@ public class DoublyLinkedList {
     }
 
 
+
+    /*
+
+    ___________________________________DLL: Swap First and Last ( ** Interview Question ** )__________________________________________________
+
+    Example:
+
+    Consider the following doubly linked list:
+
+    Head: 1
+    Tail: 5
+    Length: 5
+
+    Doubly Linked List:
+    1 <-> 2 <-> 3 <-> 4 <-> 5
+
+   - After calling swapFirstLast(), the list should be: -
+
+    Head: 5
+    Tail: 1
+    Length: 5
+
+    Doubly Linked List:
+    5 <-> 2 <-> 3 <-> 4 <-> 1
+
+
+     */
+
+
+    public void swapFirstLast() {
+
+        if (length < 2) return;
+
+        int temp = head.value;
+        head.value = tail.value;
+
+        tail.value = temp;
+    }
+
+
 }
