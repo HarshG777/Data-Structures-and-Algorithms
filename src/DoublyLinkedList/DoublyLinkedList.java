@@ -216,13 +216,10 @@ public class DoublyLinkedList {
     ___________________________________DLL: Swap First and Last ( ** Interview Question ** )__________________________________________________
 
     Example:
-
     Consider the following doubly linked list:
-
     Head: 1
     Tail: 5
     Length: 5
-
     Doubly Linked List:
     1 <-> 2 <-> 3 <-> 4 <-> 5
 
@@ -231,7 +228,6 @@ public class DoublyLinkedList {
     Head: 5
     Tail: 1
     Length: 5
-
     Doubly Linked List:
     5 <-> 2 <-> 3 <-> 4 <-> 1
 
@@ -247,6 +243,57 @@ public class DoublyLinkedList {
         head.value = tail.value;
 
         tail.value = temp;
+    }
+
+
+    /*
+
+    ___________________________________DLL: Reverse  ( ** Interview Question ** )__________________________________________________
+
+   Example:
+
+    Consider the following doubly linked list:
+
+    Head: 1
+    Tail: 5
+    Length: 5
+
+    Doubly Linked List:
+    1 <-> 2 <-> 3 <-> 4 <-> 5
+
+
+    After calling reverse(), the list should be:
+
+    Head: 5
+    Tail: 1
+    Length: 5
+
+    Doubly Linked List:
+    5 <-> 4 <-> 3 <-> 2 <-> 1
+
+
+     */
+
+
+    public void reverse(){
+        if(head == null || head.next == null) return;
+
+        Node current = head;
+        Node temp = null;
+
+        head = tail;
+        tail = current;
+
+        while(current != null){
+
+            temp = current.prev;
+
+            current.prev = current.next;
+            current.next = temp;
+
+            current = current.prev;
+        }
+
     }
 
 
