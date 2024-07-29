@@ -297,4 +297,43 @@ public class DoublyLinkedList {
     }
 
 
+        /*
+
+    ___________________________________DLL: Palindrome Checker  ( ** Interview Question ** )__________________________________________________
+
+   For example,
+
+    if the list contains the values [1, 2, 3, 2, 1], then the method should return true, since the list is a palindrome.
+
+    If the list contains the values [1, 2, 3, 4, 5], then the method should return false, since the list is not a palindrome.
+
+    Method name: isPalindrome
+
+    Return Type: boolean
+
+
+     */
+
+
+    public boolean isPalindrome(){
+
+        if(head == null || head.next == null) return true;
+
+        Node first = head;
+        Node last = tail;
+
+        while(first != last){
+
+            if(first.value != last.value){
+                return false;
+            }
+
+            first = first.next;
+            last = last.prev;
+
+        }
+        return true;
+    }
+
+
 }
