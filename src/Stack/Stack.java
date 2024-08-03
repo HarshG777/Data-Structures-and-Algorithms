@@ -55,4 +55,40 @@ public class Stack {
         return temp;
     }
 
+    public boolean isEmpty() {
+        return stackList.size() == 0;
+    }
+
+    /*
+
+    ------------Stack: Parentheses Balanced ( -**- Interview Question  -**- ) ----------------------
+
+    For example, the string "((()))" has three pairs of balanced parentheses,
+    so it is a balanced string. On the other hand, the string "(()))" has an imbalance,
+    as the last two parentheses do not match, so it is not balanced.
+    Also, the string ")(" is not balanced because the close parenthesis needs to follow the open parenthesis.
+
+
+    */
+
+    public static boolean isBalancedParentheses(String ss){
+        Stack<Character> stack = new Stack<>();
+
+
+        for(int i = 0 ; i < ss.length() ; i++ ){
+
+            if(ss.charAt(i) == '('){
+                stack.push('(');
+            }
+
+            if(ss.charAt(i) == ')'){
+                if(stack.isEmpty()) return false;
+
+                stack.pop();
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
 }
