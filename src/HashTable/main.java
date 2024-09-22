@@ -14,7 +14,7 @@ public class main {
         myHashTable.set("papaya",90);
         myHashTable.set("lemon",40);
 
-       // myHashTable.printTable();
+       myHashTable.printTable();
 
 
     }
