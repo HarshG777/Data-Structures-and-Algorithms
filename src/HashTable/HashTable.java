@@ -63,4 +63,16 @@ public class HashTable{
         }
         return 0;
     }
+
+    public ArrayList keys(){
+        ArrayList <String> allkeys = new ArrayList<>();
+        for(int i = 0; i< dataMap.length;i++){
+            Node temp = dataMap[i];
+            while (temp != null){
+                allkeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allkeys;
+    }
 }

@@ -18,6 +18,8 @@ public class main {
 
         System.out.println(myHashTable.get("lemon"));
 
+        System.out.println(myHashTable.keys());
+
 
     }
 }
